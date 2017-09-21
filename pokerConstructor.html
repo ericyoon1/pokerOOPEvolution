@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function Chips(ownerName, initialValue){
+			this.name = ownerName;
+
+			this.count = initialValue || 0;
+
+			this.add = function(addValue){
+				this.count += addValue;
+				this.getCount();
+			}
+			this.subtract = function(amountToDeduct){
+				if(amountToDeduct > this.count){
+					amountToDeduct = this.count;
+				}		
+				this.count -= amountToDeduct;
+				return amountToDeduct;
+			}
+			this.getCount = function(){
+				return this.count;
+			}
+		}
+		var chrisChips = new Chips("Chris",10);
+		var ceskaChips = new Chips("Francesca",15);
+		var jayChips = new Chips("Jay");
+		var mattChips = new Chips("Matteo",20);
+		console.log(chrisChips, ceskaChips, jayChips, mattChips);
+
+		jayChips.add(10);
+
+		console.log(chrisChips, ceskaChips, jayChips, mattChips);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var chrisChips = {
+			count: 0,
+			add : function(addValue){
+				this.count += addValue;
+				this.getCount();
+			},
+			subtract : function(amountToDeduct){
+				if(amountToDeduct > this.count){
+					amountToDeduct = this.count;
+				}		
+				this.count -= amountToDeduct;
+				return amountToDeduct;
+			},
+			getCount: function(){
+				return this.count;
+			}
+		}
+	
+		chrisChips.add(20);
+
+		var ceskaChips = {
+			count: 0,
+			add : function(addValue){
+				this.count += addValue;
+				this.getCount();
+			},
+			subtract : function(amountToDeduct){
+				if(amountToDeduct > this.count){
+					amountToDeduct = this.count;
+				}		
+				this.count -= amountToDeduct;
+				return amountToDeduct;
+			},
+			getCount: function(){
+				return this.count;
+			}
+		}
+
+		ceskaChips.add(10);
+
+		console.log(chrisChips, ceskaChips);
+
+		ceskaChips.add(  chrisChips.subtract(2)  );
+
+		var transfer = chrisChips.subtract(2);
+		ceskaChips.add(transfer);
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var chipNumbers = [];
+		
+		function addChips(value, chipPosition){
+			chipNumbers[chipPosition] += value;
+			return getChipCount(chipPosition);
+		}
+
+		function subtractChips(amountToDeduct, chipPosition){
+			if(amountToDeduct>chipNumbers[chipPosition]){
+				amountToDeduct = chipNumbers[chipPosition];
+			}
+			chipNumbers[chipPosition] -= amountToDeduct;
+			return amountToDeduct;
+		}
+
+		function getChipCount(chipPosition){
+			return chipNumbers[chipPosition];
+		}
+			// chris ,cesk, jay, matt
+chipNumbers = [0,     0,     0,   0];
+
+
+addChips(20, 2);
+addChips(10, 0);
+addChips(15, 1);
+addChips(25, 3);
+
+console.log(chipNumbers);
+
+var pot =0; 
+pot+= subtractChips(2,0);
+pot+= subtractChips(2,1);
+pot+= subtractChips(2,2);
+pot+= subtractChips(2,3);
+
+console.log("pot: "+pot, chipNumbers);
+
+addChips(pot,1);
+
+console.log("new chips",chipNumbers);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
